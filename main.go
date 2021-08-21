@@ -44,8 +44,7 @@ func connect(providerURL string) {
 		log.Fatal(err)
 	}
 
-	fee := &big.Int{}
-	fee.SetInt64(10000)
+	fee := big.NewInt(10000)
 
 	poolAddress, err := instance.GetPool(nil, tokens["WETH"], tokens["UNI"], fee)
 	if err != nil {
